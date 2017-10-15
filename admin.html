@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
     <meta charset="UTF-8">
     <title>Admin</title>
@@ -47,13 +47,13 @@
             <h2 class="heading">Додати новину</h2>
         </div>
         <form>
-            <input type="text" id = "namearticle" placeholder="Назва">
+            <input type="text" id = "namearticle" placeholder="Назва" required>
             <br>
-            <input type="text" id = "shortdescription" placeholder="Короткий опис">
+            <input type="text" id = "shortdescription" placeholder="Короткий опис" required>
             <br>
-            <input type="text" id = "longdescription" placeholder="Опис">
+            <textarea id="longdescription" placeholder="Опис" required></textarea>
             <br>
-            <button>Додати зображення</button>
+            <input type="file">
             <br>
             <button type="submit">Додати новину</button>
         </form>

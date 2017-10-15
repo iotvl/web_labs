@@ -100,7 +100,9 @@ a:hover, a:focus {
     min-height: 150px;
 }
 
-
+.table2 {
+    border-color: red;
+}
 
 
 
@@ -118,12 +120,7 @@ a:hover, a:focus {
     line-height: normal;
 }
 
-.navbar .drop::after, #navbar li li .drop::after, #breadcrumb li a::after, .sidebar nav a::after {
-    position: absolute;
-    font-family: "FontAwesome";
-    font-size: 10px;
-    line-height: 5px;
-}
+
 
 /* Top Navigation */
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" manifest="manifest.cache">
 <head>
     <meta charset="UTF-8">
     <title>Відгуки</title>
@@ -47,9 +47,11 @@
             <h2 class="heading">Відгуки</h2>
         </div>
         <form>
-            <input type="text" id = "longdescription" placeholder="Відгук">
-            <br>
-            <button type="submit">Додати відгук</button>
+            <div class="block clear">
+                <textarea name="comment" id="longdescription" required></textarea>
+                <br>
+                <input type="submit" name="submit" value="Додати відгук">
+            </div>
         </form>
         <br>
     </section>
