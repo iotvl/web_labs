@@ -46,11 +46,18 @@
             <br>
             <h2 class="heading">Відгуки</h2>
         </div>
+
+        <div id="comments">
+        <ul id = "list">
+
+        </ul>
+        </div>
+
         <form>
             <div class="block clear">
-                <textarea name="comment" id="longdescription" required></textarea>
+                <textarea class="long2" id="longdescription" required></textarea>
                 <br>
-                <input type="submit" name="submit" value="Додати відгук">
+                <input id ="btn1" type="button" name="submit" value="Додати відгук" onclick="AddReview()">
             </div>
         </form>
         <br>
@@ -67,9 +74,41 @@
 </div>
 
 
+
+
 <script src="js/jquery.backtotop.js"></script>
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+
+<script>
+        function AddReview() {
+            if ($('#longdescription').val()===""){
+                alert('Заповніть всі поля');
+                return false;
+            }
+
+            $("#list").append("<li>\n" +
+                "                <article>\n" +
+                "                    <header>\n" +
+                "                        <address class = 'user_adress'>\n" +
+                "\n" +
+                "                        </address>\n" +
+                "                        <time class =\"review_time\"></time>\n" +
+                "                    </header>\n" +
+                "                    <div class=\"comcont\">\n" +
+                "                        <p class= 'review'> </p>\n" +
+                "                    </div>\n" +
+                "                </article>\n" +
+                "            </li>");
+            $('.user_adress').append("Вася Пупкін")
+            $('.review').append($('#longdescription').val());
+            var now = new Date();
+            $('.review_time').append(now.toString());
+            $('#longdescription').val('');
+        };
+
+</script>
 </body>
 </html>
