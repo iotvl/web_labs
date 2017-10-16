@@ -55,12 +55,13 @@
             <br>
             <input type="file">
             <br>
-            <button type="submit">Додати новину</button>
+            <button type="submit" onclick="AddNews()">Додати новину</button>
         </form>
         <br>
     </section>
 </div>
 
+<h2 id = "h222"></h2>
 
 <div id="f">
     <div class="container">
@@ -74,5 +75,20 @@
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+
+<script>
+    function AddNews() {
+        if (($('#longdescription').val()==="") || ($('#shortdescription').val()==="") || ($('#namearticle').val()==="")) {
+            alert('Заповніть всі дані');
+            return false;
+        }
+        $('#longdescription').val('');
+        $('#shortdescription').val('');
+        $('#namearticle').val('');
+        alert('Новину успішно додано');
+    };
+
+</script>
+
 </body>
 </html>
