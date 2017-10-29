@@ -80,35 +80,7 @@
 <script src="js/jquery.mobilemenu.js"></script>
 <script src="js/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="js/review.js"></script>
 
-
-<script>
-        function AddReview() {
-            if ($('#longdescription').val()===""){
-                alert('Заповніть всі поля');
-                return false;
-            }
-
-            $("#list").append("<li>\n" +
-                "                <article>\n" +
-                "                    <header>\n" +
-                "                        <address class = 'user_adress'>\n" +
-                "\n" +
-                "                        </address>\n" +
-                "                        <time class =\"review_time\"></time>\n" +
-                "                    </header>\n" +
-                "                    <div class=\"comcont\">\n" +
-                "                        <p class= 'review'> </p>\n" +
-                "                    </div>\n" +
-                "                </article>\n" +
-                "            </li>");
-            $('.user_adress').append("Вася Пупкін")
-            $('.review').append($('#longdescription').val());
-            var now = new Date();
-            $('.review_time').append(now.toString());
-            $('#longdescription').val('');
-        };
-
-</script>
 </body>
 </html>

@@ -293,8 +293,13 @@ a:hover, a:focus {
 .element {
     display: block;
     width: 100%;
-    max-width: 320px;
     padding: 20px;
+    align-content: center;
+
+}
+
+.element img {
+    max-height: 500px;
 }
 
 .element figure {
@@ -307,9 +312,9 @@ a:hover, a:focus {
 .element figure::before {
     position: absolute;
     top: 10px;
-    right: 10px;
+    right: 100px;
     bottom: 10px;
-    left: 10px;
+    left: 100px;
     border: 4px solid;
     content: "";
     opacity: 1;
@@ -342,10 +347,14 @@ a:hover, a:focus {
 }
 
 .element .excerpt {
+    padding-left: 50px;
+
+
 }
 
 .element .excerpt * {
     margin: 0;
+
 }
 
 .element .excerpt .heading {
@@ -1059,4 +1068,7 @@ table a, #comments a {
 #comments textarea{overflow:auto;}
 #comments div{margin-bottom:15px;}
 #comments input[type="submit"], #comments input[type="reset"]{display:inline-block; width:auto; min-width:150px; margin:0; padding:8px 5px; cursor:pointer;}
+
+
+
 
