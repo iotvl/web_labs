@@ -11,21 +11,31 @@ function AddNews() {
     }
 
     if (isOnline()) {
-        $('#longdescription').val('');
-        $('#shortdescription').val('');
-        $('#namearticle').val('');
         alert('Новину успішно додано');
     }
-
     else {
-        i++;
-        var list = [];
-        list.push({"name":$('#namearticle').val(),
-            "shortdescription":$('#shortdescription').val(),
-            "longdescription":$('#longdescription').val()});
-        localStorage.setItem(i, JSON.stringify(list));
-        $('#longdescription').val('');
-        $('#shortdescription').val('');
-        $('#namearticle').val('');
+        if (useLocalStorage){
+            i++;
+            var list = [];
+            list.push({
+                "name": $('#namearticle').val(),
+                "shortdescription": $('#shortdescription').val(),
+                "longdescription": $('#longdescription').val()
+            });
+            localStorage.setItem(i, JSON.stringify(list));
+        }
+        else {
+            var transaction = db.transaction(["news"], "readwrite");
+            var store = transaction.objectStore("news");
+            var news1 = {
+                name: $('#namearticle').val(),
+                shortdescription: $('#shortdescription').val(),
+                longdescription: $('#longdescription').val()
+            };
+            store.add(news1);
+        }
     }
+    $('#longdescription').val('');
+    $('#shortdescription').val('');
+    $('#namearticle').val('');
 }
